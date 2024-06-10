@@ -10,7 +10,7 @@ echoSolanaMetricsConfig() {
   (
     # shellcheck source=/dev/null
     source "$metrics_config_sh"
-    echo "host=http://localhost:8086,db=testnet,u=$INFLUXDB_WRITE_USER,p=$INFLUXDB_WRITE_PASSWORD"
+    echo "host=http://localhost:8086,db=solana_metrics"
   )
 }
 
