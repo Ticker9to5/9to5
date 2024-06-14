@@ -3,7 +3,7 @@
 # Start the bootstrap validator node
 #
 set -e
-
+export PATH="/root/.cargo/bin:$PATH"
 here=$(dirname "$0")
 # shellcheck source=multinode-demo/common.sh
 source "$here"/common.sh
@@ -86,9 +86,6 @@ while [[ -n $1 ]]; do
       args+=("$1" "$2")
       shift 2
     elif [[ $1 == --expected-bank-hash ]]; then
-      args+=("$1" "$2")
-      shift 2
-    elif [[ $1 == --expected-shred-version ]]; then
       args+=("$1" "$2")
       shift 2
     elif [[ $1 == --accounts ]]; then
@@ -199,3 +196,4 @@ while true; do
 
   kill_node
 done
+
